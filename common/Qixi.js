@@ -1,3 +1,4 @@
+//鸟
 class Bird {
   constructor() {
     this.$bird = $('.bird');
@@ -11,6 +12,7 @@ class Bird {
   }
 }
 
+//台灯
 class Lamp {
   constructor() {
     this.$lamp = $('.b_background');
@@ -25,6 +27,7 @@ class Lamp {
   }
 }
 
+//门
 class Door {
   constructor() {}
 
@@ -63,6 +66,7 @@ class Door {
   }
 }
 
+//男孩
 class Boy {
   constructor() {
     this.visualWidth = $("#content").width();
@@ -214,6 +218,7 @@ class Boy {
   }
 }
 
+//女孩
 class Girl {
   constructor() {
     this.$girl = $('.girl');
@@ -224,6 +229,7 @@ class Girl {
   }
 }
 
+//花瓣
 class Flake {
   constructor() {
     this.visualWidth = $("#content").width();
