@@ -6,7 +6,7 @@
 }
 
 .b_background_preload {
-  background: url("../images/background/b_prebackground.png") no-repeat -9999px -9999px;
+  background: url("../images/background/b_prebackground.png");
 }
 
 .lamp-bright {
