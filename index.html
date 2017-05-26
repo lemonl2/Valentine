@@ -67,6 +67,9 @@
     </ul>
     <div id="boy" class="character"></div>
     <div id="snowflake"></div>
+    <audio src="./music/happy.wav" id="audio" autoplay loop>
+      <p>你的浏览器不支持audio</p>
+    </audio>
   </div>
   <script type="text/javascript">
     let container = $("#content");
@@ -83,6 +86,7 @@
           return boy.pauseWalk()
         })
         .then(() => {
+          //小鸟飞过
           return bird.fly();
         })
         .then(() => {
@@ -110,18 +114,24 @@
           return boy.walkTo(5000, 2 / 3)
         })
         .then(() => {
-          return boy.walkToGirl(7000);
+          //走到女孩面前
+          return boy.walkToGirl(6000);
         })
         .then(() => {
+          //播放氛围音乐，男孩注视着女孩
+          $('#audio')[0].src = './music/circulation.wav';
+          $('#audio')[0].play();
           return boy.resetOriginal();
         })
         .then(() => {
+          //两人相互依偎
           setTimeout(() => {
             girl.rotate();
             boy.rotate();
           }, 1000);
         })
         .then(() => {
+          //花瓣飘落
           return flake.waveFlake();
         });
     }
