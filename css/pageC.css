@@ -1,0 +1,173 @@
+.c_background {
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.c_background_top {
+  background: url("../images/background/c_background_top.png");
+  height: 71.6%;
+  width: 100%;
+  background-size: 100% 100%;
+}
+
+.c_background_middle {
+  background: url("../images/background/c_background_middle.png");
+  height: 13.3%;
+  width: 100%;
+  background-size: 100% 100%;
+}
+
+.c_background_bottom {
+  background: url("../images/background/c_background_bottom.png");
+  height: 15.1%;
+  width: 100%;
+  background-size: 100% 100%;
+}
+
+.girl {
+  background: url("../images/girl.png") no-repeat -755px -0px;
+  position: absolute;
+  height: 291px;
+  width: 151px;
+  top: 37%;
+  right: 7%;
+}
+
+.bridge_bottom {
+  position: absolute;
+  height: 24%;
+  width: 33.33%;
+  top: 76%;
+}
+
+.water {
+  width: 100%;
+  height: 100%;
+}
+
+.water_1,
+.water_2,
+.water_3,
+.water_4 {
+    width: 100%;
+    position: absolute;
+    height: 50%;
+}
+
+.water_1 {
+    width: 91px;
+    height: 15px;
+    top: 13%;
+    left: 40%;
+    background: url("../images/water.png") -261px -0px no-repeat;
+}
+
+.water_2 {
+    width: 111px;
+    height: 9px;
+    top: 30%;
+    left: 45%;
+    background: url("../images/water.png") -693px -0px no-repeat;
+}
+
+.water_3 {
+    width: 191px;
+    height: 29px;
+    top: 50%;
+    left: 30%;
+    background: url("../images/water.png") -0px -0px no-repeat;
+}
+
+.water_4 {
+    width: 211px;
+    height: 12px;
+    top: 75%;
+    left: 30%;
+    background: url("../images/water.png") -392px -0px no-repeat;
+}
+
+
+.stars {
+    width: 33.33%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.stars > li {
+    position: absolute;
+    width: 30px;
+    height: 31px;
+    background-image: url("../images/stars.png");
+    animation: flash 5s ease-in-out infinite;
+}
+
+.stars1 {
+    top: 20%;
+    left: 30%;
+}
+
+.stars2 {
+    top: 15%;
+    left: 20%;
+}
+
+.stars3 {
+    top: 25%;
+    left: 85%;
+}
+
+.stars4 {
+    top: 30%;
+    left: 70%;
+}
+
+.stars5 {
+    top: 25%;
+    left: 20%;
+}
+
+.stars6 {
+    top: 10%;
+    left: 65%;
+}
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+#snowflake {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 33.33%;
+  overflow: hidden;
+}
+
+.snowRoll {
+    position: absolute;
+    opacity: 0;
+    height: 80px;
+    animation: mysnow 20s;
+}
+
+@keyframes mysnow {
+    0% {
+        bottom: 100%
+    }
+    50% {
+        transform: rotate(1080deg);
+    }
+    100% {
+        transform: rotate(0deg) translate3d(50px, 50px, 50px);
+
+    }
+}

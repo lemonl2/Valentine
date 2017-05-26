@@ -1,0 +1,159 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+
+/*主体部分*/
+
+#content {
+  width: 100vw;
+  height: 100vh;
+}
+
+.content-wrap {
+  display: flex;
+}
+
+.content-wrap>li {
+  background: #CAE1FF;
+  color: red;
+  overflow: hidden;
+  flex: 1;
+  height: 100vh;
+}
+
+.character {
+  width: 151px;
+  height: 291px;
+  background: url("../images/boy.png") -0px -291px no-repeat;
+  position: absolute;
+  left: 2%;
+  top: 55%;
+}
+
+.slowWalk {
+  animation: person-slow 950ms infinite steps(1, start);
+}
+
+@keyframes person-slow {
+  0% {
+    background-position: -0px -291px;
+  }
+  25% {
+    background-position: -602px -0px;
+  }
+  50% {
+    background-position: -302px -291px;
+  }
+  75% {
+    background-position: -151px -291px;
+  }
+  100% {
+    background-position: -0px -291px;
+  }
+}
+
+
+@keyframes translate {
+  from: {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(400px);
+  }
+}
+
+
+/*人物暂停*/
+
+.pauseWalk {
+  animation-play-state: paused;
+}
+
+.slowFlowerWalk {
+  animation: person-flower-slow 950ms infinite step-start;
+}
+
+@keyframes person-flower-slow {
+  0% {
+    background-position: -453px -0px;
+  }
+  25% {
+    background-position: -904px -0px;
+  }
+  50% {
+    background-position: -451px -0px;
+  }
+  75% {
+    background-position: -753px -0px;
+  }
+  100% {
+    background-position: -300px -0px;
+  }
+}
+
+.boyOriginal {
+  background-position: -150px -0px;
+}
+
+@keyframes girl-rotate {
+  0% {
+    background-position: -604px 0px;
+  }
+  16.7% {
+    background-position: -151px 0px
+  }
+  33.4% {
+    background-position: -906px 0px;
+  }
+  50.1% {
+    background-position: 0px 0px;
+  }
+  66.8% {
+    background-position: -302px 0px;
+  }
+  83.5% {
+    background-position: -453px 0px;
+  }
+  100% {
+    background-position: -604px 0px;
+  }
+}
+
+.girl-rotate {
+  animation: girl-rotate 850ms step-start 1 forwards;
+}
+
+@keyframes boy-rotate {
+  0% {
+    background-position: -603px -291px;
+  }
+  16.7% {
+    background-position: -150px -0px;
+  }
+  33.4% {
+    background-position: -453px -291px;
+  }
+  50.1% {
+    background-position: -0px -0px;
+  }
+  66.8% {
+    background-position: -903px -291px;
+  }
+  83.5% {
+    background-position: -753px -291px;
+  }
+  100% {
+    background-position: -603px -291px;
+  }
+}
+
+.boy-rotate {
+  animation: boy-rotate 850ms step-start 1 forwards;
+}

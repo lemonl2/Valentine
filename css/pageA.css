@@ -1,0 +1,89 @@
+.a_background {
+  height: 100%;
+  width: 100%;
+}
+
+.a_background_top {
+  height: 71.6%;
+  width: 100%;
+  background-image: url("../images/background/a_background_top.png");
+  background-size: 100% 100%;
+}
+
+.a_background_middle {
+  height: 13.1%;
+  width: 100%;
+  background-image: url("../images/background/a_background_middle.png");
+  background-size: 100% 100%;
+}
+
+.a_background_bottom {
+  height: 15.3%;
+  width: 100%;
+  background-image: url("../images/background/a_background_bottom.png");
+  background-size: 100% 100%;
+}
+
+#sun {
+  background: url("../images/sun.png") no-repeat;
+  position: absolute;
+  z-index: 1;
+  top: -30px;
+  height: 201px;
+  width: 201px;
+  left: -2%;
+}
+
+.rotation {
+  animation: rotation 30s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    transform: translateX(-2000px) translateY(400px);
+  }
+}
+
+.cloud {
+  z-index: 2;
+  position: absolute;
+}
+
+.cloud1 {
+  width: 181px;
+  height: 101px;
+  left: -5%;
+  top: 15%;
+  background: url("../images/cloud1.png");
+  animation: smallCloud 30s linear infinite;
+}
+
+.cloud2 {
+  width: 301px;
+  height: 140px;
+  left: 5%;
+  top: 2%;
+  background: url("../images/cloud2.png");
+  animation: largeCloud 60s linear infinite;
+}
+
+@keyframes smallCloud {
+  0% {
+    left: -5%;
+  }
+  100% {
+    left: 20%;
+  }
+}
+
+@keyframes largeCloud {
+  0% {
+    left: 5%;
+  }
+  100% {
+    left: -20%;
+  }
+}

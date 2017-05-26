@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>七夕主题</title>
+  <script src="./node_modules/jquery/dist/jquery.js"></script>
+  <script src="./node_modules/jquery.transit/jquery.transit.js"></script>
+  <link rel="stylesheet" href="./css/global.css" />
+  <link rel="stylesheet" href="./css/pageA.css" />
+  <link rel="stylesheet" href="./css/pageB.css" />
+  <link rel="stylesheet" href="./css/pageC.css" />
+  <script type="text/javascript" src="./common/Qixi.js"></script>
+</head>
+
+<body>
+  <div id="content">
+    <ul class="content-wrap">
+      <li><!--pageA-->
+        <div class="a_background">
+          <div class="a_background_top"></div>
+          <div class="a_background_middle"></div>
+          <div class="a_background_bottom"></div>
+        </div>
+        <div class="cloudArea">
+          <div class="cloud cloud1"></div>
+          <div class="cloud cloud2"></div>
+        </div>
+        <div id="sun"></div>
+      </li>
+      <li><!--pageB-->
+        <div class="b_background"></div>
+        <div class="b_background_preload"></div>
+        <div class="shop">
+          <div class="door">
+            <div class="door-left"></div>
+            <div class="door-right"></div>
+          </div>
+          <div class="lamp"></div>
+        </div>
+        <div class="bird"></div>
+      </li>
+      <li><!--pageC-->
+        <div class="c_background">
+          <div class="c_background_top"></div>
+          <div class="c_background_middle"></div>
+          <div class="c_background_bottom"></div>
+        </div>
+        <div class="girl"></div>
+        <div class="bridge_bottom">
+          <div class="water">
+            <div id="water1" class="water_1"></div>
+            <div id="water2" class="water_2"></div>
+            <div id="water3" class="water_3"></div>
+            <div id="water4" class="water_4"></div>
+          </div>
+        </div>
+        <ul class="stars">
+          <li class="stars1"></li>
+          <li class="stars2"></li>
+          <li class="stars3"></li>
+          <li class="stars4"></li>
+          <li class="stars5"></li>
+          <li class="stars6"></li>
+        </ul>
+      </li>
+    </ul>
+    <div id="boy" class="character"></div>
+    <div id="snowflake"></div>
+  </div>
+  <script type="text/javascript">
+    let container = $("#content");
+    let boy = new Boy();
+    let girl = new Girl();
+    let door = new Door();
+    let bird = new Bird();
+    let flake = new Flake();
+
+    function startRun() {
+      boy.walkTo(10000, 0.5)
+        .then(() => {
+          //暂停走路
+          return boy.pauseWalk()
+        })
+        .then(() => {
+          return bird.fly();
+        })
+        .then(() => {
+          //开门
+          return door.openDoor();
+        })
+        .then(() => {
+          //进商店
+          return boy.walkToShop(2000)
+        })
+        .then(() => {
+          //取花
+          return boy.takeFlower();
+        })
+        .then(() => {
+          //出商店
+          return boy.walkOutShop(2000)
+        })
+        .then(() => {
+          //关门
+          return door.shutDoor();
+        })
+        .then(() => {
+          //继续行走
+          return boy.walkTo(5000, 2 / 3)
+        })
+        .then(() => {
+          return boy.walkToGirl(7000);
+        })
+        .then(() => {
+          return boy.resetOriginal();
+        })
+        .then(() => {
+          setTimeout(() => {
+            girl.rotate();
+            boy.rotate();
+          }, 1000);
+        })
+        .then(() => {
+          return flake.waveFlake();
+        });
+    }
+
+    startRun();
+  </script>
+</body>
+
+</html>
