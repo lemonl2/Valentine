@@ -27,6 +27,26 @@ class Lamp {
   }
 }
 
+//背景音乐
+class Music {
+  constructor() {
+    this.music = $('#audio')[0];
+  }
+
+  stop() {
+    this.music.pause();
+  }
+
+  play() {
+    this.music.play();
+  }
+
+  changeSrc(url) {
+    this.music.src = url;
+  }
+
+}
+
 //门
 class Door {
   constructor() {}
@@ -285,3 +305,5 @@ class Flake {
     }, 200);
   }
 }
+
+
