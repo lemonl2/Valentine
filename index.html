@@ -68,19 +68,25 @@
     </ul>
     <div id="boy" class="character"></div>
     <div id="snowflake"></div>
-    <audio src="./music/happy.wav" id="audio" autoplay loop>
+    <audio src="./music/happy.wav" id="audio" loop>
       <p>你的浏览器不支持audio</p>
     </audio>
+    <div class="operate">
+      <button id="start" title="你还在等什么？她已经等不急了。">去表白</button>
+    <div>
   </div>
   <script type="text/javascript">
-    let container = $("#content");
+    let container = $('#content');
+    let start = $('#start');
     let boy = new Boy();
     let girl = new Girl();
     let door = new Door();
     let bird = new Bird();
     let flake = new Flake();
+    let music = new Music();
 
     function startRun() {
+      music.play();
       boy.walkTo(10000, 0.5)
         .then(() => {
           //暂停走路
@@ -120,8 +126,9 @@
         })
         .then(() => {
           //播放氛围音乐，男孩注视着女孩
-          $('#audio')[0].src = './music/circulation.wav';
-          $('#audio')[0].play();
+          music.stop();
+          music.changeSrc('./music/circulation.wav');
+          music.play();
           return boy.resetOriginal();
         })
         .then(() => {
@@ -137,7 +144,11 @@
         });
     }
 
-    startRun();
+    start.on('click', (event) => {
+      startRun();
+      start.hide(3000);
+    })
+
   </script>
 </body>
 </html>

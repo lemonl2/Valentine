@@ -157,3 +157,18 @@ li {
 .boy-rotate {
   animation: boy-rotate 850ms step-start 1 forwards;
 }
+
+.operate {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  width: 150px;
+}
+
+button {
+  cursor: pointer;
+  width: 60px;
+  background: #c37883;
+  color: white;
+  border: 1px;
+}
