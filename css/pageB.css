@@ -7,6 +7,7 @@
 
 .b_background_preload {
   background: url("../images/background/b_prebackground.png");
+  background-size: 100% 100%;
 }
 
 .lamp-bright {
@@ -18,20 +19,20 @@
 /*商店*/
 
 .shop {
-  width: 39.5%;
+  width: 40%;
   height: 35.5%;
   position: absolute;
-  left: 29%;
+  left: 28%;
   top: 36.5%;
 }
 
 .door {
   position: absolute;
-  width: 11%;
+  width: 40%;
   height: 68%;
   overflow: hidden;
   top: 32%;
-  left: 55%;
+  left: 52%;
 }
 
 .door-left,
@@ -48,7 +49,7 @@
 }
 
 .door-right {
-  left: 50%;
+  right: 0%;
   background: url('../images/door-right.png');
   background-size: 100% 100%;
 }
@@ -59,7 +60,7 @@
     top: 10%;
     position: absolute;
     z-index: 0;
-    right: 26%;
+    right: -20%;
     background: url('../images/bird.png') -182px 0px no-repeat;
 }
 
