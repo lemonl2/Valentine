@@ -64,10 +64,10 @@
 .cloud2 {
   width: 301px;
   height: 140px;
-  left: 5%;
+  left: 15%;
   top: 2%;
   background: url("../images/cloud2.png");
-  animation: largeCloud 60s linear infinite;
+  animation: largeCloud 40s linear infinite;
 }
 
 @keyframes smallCloud {
@@ -75,7 +75,7 @@
     left: -5%;
   }
   100% {
-    left: 20%;
+    left: 80%;
   }
 }
 

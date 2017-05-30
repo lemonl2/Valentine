@@ -28,16 +28,16 @@
 .girl {
   background: url("../images/girl.png") no-repeat -755px -0px;
   position: absolute;
-  height: 291px;
-  width: 151px;
+  height: 280px;
+  width: 140px;
   top: 37%;
-  right: 10%;
+  right: 28%;
 }
 
 .bridge_bottom {
   position: absolute;
   height: 24%;
-  width: 33.33%;
+  width: 100%;
   top: 76%;
 }
 
@@ -89,7 +89,7 @@
 
 
 .stars {
-    width: 33.33%;
+    width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;

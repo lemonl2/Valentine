@@ -56,7 +56,7 @@ class Door {
     let doorRight = $('.door-right');
     let count = 2;
     let p = new Promise((resolve, reject) => {
-      let complete = function () {
+      let complete = () => {
         if (count == 1) {
           resolve();
           return;
@@ -67,7 +67,7 @@ class Door {
         'left': left
       }, time, complete);
       doorRight.transition({
-        'left': right
+        'right': right
       }, time, complete);
     });
     return p;
@@ -76,13 +76,13 @@ class Door {
   openDoor() {
     let lamp = new Lamp();
     lamp.bright();
-    return this._doorAction('-50%', '100%', 2000);
+    return this._doorAction('-50%', '-50%', 2000);
   }
 
   shutDoor() {
     let lamp = new Lamp();
     lamp.dark();
-    return this._doorAction('0%', '50%', 2000);
+    return this._doorAction('0', '0', 2000);
   }
 }
 
@@ -92,25 +92,12 @@ class Boy {
     this.visualWidth = $("#content").width();
     this.visualHeight = $("#content").height();
 
-    // 获取数据
-    let getValue = (className) => {
-      let $elem = $(className);
-      // 走路的路线坐标
-      return {
-        height: $elem.height(),
-        top: $elem.position().top
-      };
-    };
-    // 路的Y轴
-    this.pathY = function () {
-      let data = getValue('.a_background_middle');
-      return data.top + data.height / 2;
-    }();
+    let $road = $('.a_background_middle');
 
     this.$boy = $("#boy");
     // 修正小男孩的正确位置
     this.$boy.css({
-      top: this.pathY - this.$boy.height() + 25
+      top: $road.position().top + $road.height() / 2 - this.$boy.height() + 25
     });
   }
 
@@ -131,7 +118,6 @@ class Boy {
 
   // 用transition做运动
   _startRun(options, runTime) {
-    //let dfdPlay = $.Deferred();
     let dfdPlay = new Promise((resolve, reject) => {
       // 恢复走路
       this.restoreWalk();
@@ -162,8 +148,7 @@ class Boy {
 
   // 计算移动距离
   _calculateDist(direction, proportion) {
-    return (direction == 'x' ?
-      this.visualWidth : this.visualHeight) * proportion;
+    return (direction == 'x' ? this.visualWidth : this.visualHeight) * proportion;
   }
 
   // 走进商店
@@ -241,7 +226,12 @@ class Boy {
 //女孩
 class Girl {
   constructor() {
+    let $brige = $('.bridge_bottom');
     this.$girl = $('.girl');
+
+    this.$girl.css({
+      top: $brige.position().top - 45 - this.$girl.height(),
+    });
   }
 
   rotate() {
@@ -299,7 +289,7 @@ class Flake {
         top: this.visualHeight - 41,
         right: Math.random() * this.visualWidth - 100,
         opacity: 0.7,
-      }, this.visualHeight * 10 + Math.random() * 5000 , 'ease-out', () => {
+      }, this.visualHeight * 10  + Math.random() * 5000 , 'ease-out', () => {
         $flake.remove();
       });
     }, 200);

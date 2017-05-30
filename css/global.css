@@ -20,12 +20,13 @@ li {
   display: flex;
 }
 
-.content-wrap>li {
+.content-wrap > li {
   background: #CAE1FF;
   color: red;
   overflow: hidden;
   flex: 1;
   height: 100vh;
+  position: relative;
 }
 
 .character {
