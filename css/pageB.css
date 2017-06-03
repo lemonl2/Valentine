@@ -1,11 +1,11 @@
 .b_background {
   width: 100%;
   height: 100%;
-  background: url("../images/background/b_background.png");
+  background: url("../images/background/b_prebackground.png");
   background-size: 100% 100%;
 }
 
-.b_background_preload {
+/*.b_background_preload {
   background: url("../images/background/b_prebackground.png");
   background-size: 100% 100%;
 }
@@ -13,7 +13,7 @@
 .lamp-bright {
   background-image: url("../images/background/b_lamp-bright.png");
   background-size: 100% 100%;
-}
+}*/
 
 
 /*商店*/
