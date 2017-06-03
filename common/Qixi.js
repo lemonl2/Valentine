@@ -16,21 +16,26 @@ class Bird {
 //背景音乐
 class Music {
   constructor() {
-    this.music = $('#audio')[0];
+    this.happy = $('#happy')[0];
+    this.circulation = $('#circulation')[0];
   }
 
-  stop() {
-    this.music.pause();
+  stopHappy() {
+    this.happy.pause();
   }
 
-  play() {
-    this.music.play();
+  playHappy() {
+
+    this.happy.play();
   }
 
-  changeSrc(url) {
-    this.music.src = url;
+  stopCirculation() {
+    this.circulation.pause();
   }
 
+  playCirculation() {
+    this.circulation.play();
+  }
 }
 
 //门
