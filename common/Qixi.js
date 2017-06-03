@@ -220,6 +220,12 @@ class Boy {
   rotate(callback) {
     this.restoreWalk();
     this.$boy.addClass('boy-rotate');
+    if (callback) {
+      this.$boy.on('animationend', () => {
+        callback();
+        this.$boy.off();
+      })
+    }
   }
 }
 
@@ -289,11 +295,23 @@ class Flake {
         top: this.visualHeight - 41,
         right: Math.random() * this.visualWidth - 100,
         opacity: 0.7,
-      }, this.visualHeight * 10  + Math.random() * 5000 , 'ease-out', () => {
+      }, this.visualHeight * 10 + Math.random() * 5000, 'ease-out', () => {
         $flake.remove();
       });
     }, 200);
   }
 }
 
+//logo
+class Logo {
+  constructor() {
+    this.$logo = $('.logo');
+  }
 
+  run() {
+    this.$logo.addClass('logolightSpeedIn')
+      .on('animationend', () => {
+        this.$logo.addClass('logoshake').off();
+      })
+  }
+}

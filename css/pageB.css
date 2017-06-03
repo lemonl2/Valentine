@@ -28,11 +28,11 @@
 
 .door {
   position: absolute;
-  width: 40%;
+  width: 38%;
   height: 68%;
   overflow: hidden;
   top: 32%;
-  left: 52%;
+  left: 57%;
 }
 
 .door-left,
