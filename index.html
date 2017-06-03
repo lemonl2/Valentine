@@ -64,6 +64,7 @@
           <li class="stars5"></li>
           <li class="stars6"></li>
         </ul>
+         <div class="logo"></div>
       </li>
     </ul>
     <div id="boy" class="character"></div>
@@ -84,6 +85,7 @@
     let bird = new Bird();
     let flake = new Flake();
     let music = new Music();
+    let logo = new Logo();
 
     function startRun() {
       music.play();
@@ -135,7 +137,7 @@
           //两人相互依偎
           setTimeout(() => {
             girl.rotate();
-            boy.rotate();
+            boy.rotate(() => logo.run());
           }, 1000);
         })
         .then(() => {
