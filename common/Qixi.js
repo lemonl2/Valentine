@@ -12,20 +12,6 @@ class Bird {
   }
 }
 
-//台灯
-class Lamp {
-  constructor() {
-    this.$lamp = $('.b_background');
-  }
-
-  bright() {
-    this.$lamp.addClass('lamp-bright');
-  }
-
-  dark() {
-    this.$lamp.removeClass('lamp-bright');
-  }
-}
 
 //背景音乐
 class Music {
@@ -74,14 +60,10 @@ class Door {
   }
 
   openDoor() {
-    let lamp = new Lamp();
-    lamp.bright();
     return this._doorAction('-50%', '-50%', 2000);
   }
 
   shutDoor() {
-    let lamp = new Lamp();
-    lamp.dark();
     return this._doorAction('0', '0', 2000);
   }
 }
