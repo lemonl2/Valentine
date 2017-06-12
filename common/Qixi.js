@@ -12,7 +12,6 @@ class Bird {
   }
 }
 
-
 //背景音乐
 class Music {
   constructor() {
@@ -146,14 +145,10 @@ class Boy {
     // 开始走路
     let walkPlay = this._startRun({
       transform: 'translateX(' + instanceX + 'px), scale(0.3, 0.3)',
-      opacity: 0.1
+      opacity: 0
     }, 2000);
     // 走路完毕
-    return walkPlay.then(() => {
-      this.$boy.css({
-        opacity: 0
-      });
-    });
+    return walkPlay;
   }
 
   // 走出店
@@ -185,7 +180,7 @@ class Boy {
   walkToGirl(runTime) {
     let $girl = $('.girl');
     let instanceX = ($girl.offset().left + $girl.width() / 2) - (this.$boy.offset().left + this.$boy.width());
-    let instanceY = ($girl.offset().top + $girl.height() / 2) - (this.$boy.offset().top + this.$boy.height() / 2);
+    let instanceY = ($girl.offset().top) - (this.$boy.offset().top);
     let walkToGirl = this._startRun({
       transform: `translate(${instanceX}px, ${instanceY}px)`,
     }, runTime);
@@ -223,7 +218,7 @@ class Girl {
     this.$girl = $('.girl');
 
     this.$girl.css({
-      top: $brige.position().top - 45 - this.$girl.height(),
+      top: $brige.position().top - 90 - this.$girl.height(),
     });
   }
 
@@ -280,9 +275,9 @@ class Flake {
 
       $flake.transition({
         top: this.visualHeight - 41,
-        right: Math.random() * this.visualWidth - 100,
+        right: Math.random() * this.visualWidth * 0.33 ,
         opacity: 0.7,
-      }, this.visualHeight * 10 + Math.random() * 5000, 'ease-out', () => {
+      }, this.visualHeight * 15, 'ease-out', () => {
         $flake.remove();
       });
     }, 200);

@@ -103,34 +103,6 @@ li {
   background-position: -150px -0px;
 }
 
-@keyframes girl-rotate {
-  0% {
-    background-position: -604px 0px;
-  }
-  16.7% {
-    background-position: -151px 0px
-  }
-  33.4% {
-    background-position: -906px 0px;
-  }
-  50.1% {
-    background-position: 0px 0px;
-  }
-  66.8% {
-    background-position: -302px 0px;
-  }
-  83.5% {
-    background-position: -453px 0px;
-  }
-  100% {
-    background-position: -604px 0px;
-  }
-}
-
-.girl-rotate {
-  animation: girl-rotate 850ms step-start 1 forwards;
-}
-
 @keyframes boy-rotate {
   0% {
     background-position: -603px -291px;
